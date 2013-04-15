@@ -16,7 +16,6 @@ public Plugin:myinfo =
 
 new Handle:g_Cvar_UpperThreshold = INVALID_HANDLE;
 new Handle:g_Cvar_LowerThreshold = INVALID_HANDLE;
-//new Handle:g_Cvar_ToggleBehavior = INVALID_HANDLE;
 new Handle:g_Cvar_Enabled = INVALID_HANDLE;
 new Handle:g_Cvar_ToggleWeaponSpread = INVALID_HANDLE;
 new Handle:g_Cvar_ToggleDamageSpread = INVALID_HANDLE;
@@ -111,7 +110,7 @@ public ToggleState(bool:enable)
 	BuildPath(Path_SM, file, sizeof(file), "logs/critmanager.log");
 	if(enable)
 	{
-		// Do something
+		// Enable randomness
 		if(GetConVarBool(g_Cvar_ToggleWeaponSpread))
 			SetConVarInt(g_Cvar_WeaponSpread, 0);
 		if(GetConVarBool(g_Cvar_ToggleDamageSpread))
@@ -126,7 +125,7 @@ public ToggleState(bool:enable)
 	}
 	else
 	{
-		// Do something else
+		// Disable randomness
 		if(GetConVarBool(g_Cvar_ToggleWeaponSpread))
 			SetConVarInt(g_Cvar_WeaponSpread, 1);
 		if(GetConVarBool(g_Cvar_ToggleDamageSpread))
